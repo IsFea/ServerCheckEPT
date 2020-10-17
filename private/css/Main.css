@@ -1,0 +1,24 @@
+.block {
+    border: 1px solid #7d7d7d;
+    border-radius: 13px;
+    color: #3e3e3e;
+}
+body {
+    background-color:#f9f9f9;
+}
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.text-white {
+    color: #f1f1f1;
+}
+.text-white {
+    color:#212529;
+}
+.active {
+    color: #fff !important;
+}
+.align-right {
+    text-align: right;
+}
