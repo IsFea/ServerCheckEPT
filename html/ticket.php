@@ -17,7 +17,12 @@ while ($row = sqlsrv_fetch_array($q, SQLSRV_FETCH_ASSOC)) {
 
     });
 </script>
-<div class="container">
+<style>
+    #ticket .row {
+        margin-top: 10px;
+    }
+</style>
+<div class="container" id="ticket">
     <h3 style="">Создание заявки</h3>
     <div class="row">
         <div class="col-md-6">
@@ -36,7 +41,7 @@ while ($row = sqlsrv_fetch_array($q, SQLSRV_FETCH_ASSOC)) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12 align-right">
                     <span class="text-black">Приоритет</span>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -50,14 +55,15 @@ while ($row = sqlsrv_fetch_array($q, SQLSRV_FETCH_ASSOC)) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12 align-right">
                     <span class="text-black">Описание</span>
                 </div>
                 <div class="col-md-6 col-sm-12">
-
+                        <textarea name="description" id="description" cols="40" rows="10"></textarea>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">Местоположение</div>
+    <h3 style="">Местоположение</h3>
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.624513%2C55.748635&z=12" min-width="360" height="400" frameborder="0" allowfullscreen="true" style="width: -webkit-fill-available;"></iframe>
 </div>
