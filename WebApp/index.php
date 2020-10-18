@@ -3,14 +3,6 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 include "../private/php/DbConnecter.php";
-// echo 'test';
-$sql = "SELECT * FROM RequestQuery WHERE id = 1";
-$stmt = sqlsrv_query($conn, $sql);
-if ($stmt === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
-
-// phpinfo();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +16,9 @@ if ($stmt === false) {
     <link rel="stylesheet" href="../private/css/Main.css">
     <script src="../private/Libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="../private/js/Main.js"></script>
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+    <script src="../private/Libs/location.js"></script>
+    <script src="../private/Libs/bootstrap/js/table.js"></script>
 </head>
 
 <header style="background-color: #005b9c;">
@@ -32,14 +27,11 @@ if ($stmt === false) {
             <img src="../src/img/logo.png" alt="Россети" srcset="" style="padding: 10px;max-width: 160px;">
         </div>
         <div class="col-sm-9">
-            <ul class="nav" style="padding: 10px;" id="main-navigation" style="display:none;">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" href="#">Новая заявка</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Список заявок</a>
-                </li>
-            </ul>
+            <div class="nav" style="padding: 15px; margin-left:15px" id="main-navigation">
+                <span class="text-white custom-nav-item" id="nav-create-ticket">Создать задачу</span>
+                <span class="text-white custom-nav-item" id="nav-journal">Журнал задач</span>
+                <span class="text-white custom-nav-item" id="nav-confirm-ticket">Утерждение задач</span>
+            </div>
         </div>
         <div class="col-sm-1" style="text-align: right;"><span class="nav text-white" style="padding: 10px;" id="loginSplash"></span></div>
     </div>

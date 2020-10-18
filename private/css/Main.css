@@ -13,7 +13,7 @@ body {
 .text-white {
     color: #f1f1f1;
 }
-.text-white {
+.text-black {
     color:#212529;
 }
 .active {
@@ -21,4 +21,12 @@ body {
 }
 .align-right {
     text-align: right;
+}
+.custom-nav-item {
+    margin-left: 15px;
+}
+
+.custom-nav-item:hover{
+    cursor: pointer;
+    height: auto;
 }
